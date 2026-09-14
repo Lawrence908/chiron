@@ -1,0 +1,21 @@
+{
+  "name": "ai",
+  "description": "AI and Agents: 3 agent skills. agent-orchestration, mcp-integration, prompt-engineering.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Chris Lawrence"
+  },
+  "homepage": "https://github.com/Lawrence908/chiron",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lawrence908/chiron"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ai",
+    "llm",
+    "prompting",
+    "mcp",
+    "agents"
+  ]
+}

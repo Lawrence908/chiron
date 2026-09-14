@@ -1,0 +1,90 @@
+{
+  "name": "chiron",
+  "owner": {
+    "name": "Chris Lawrence",
+    "url": "https://github.com/Lawrence908"
+  },
+  "description": "Agent skills for AI engineering, development, writing and research. A Claude Code plugin marketplace.",
+  "plugins": [
+    {
+      "name": "ai",
+      "source": "./plugins/ai",
+      "displayName": "AI and Agents",
+      "description": "AI and Agents: 3 agent skills. agent-orchestration, mcp-integration, prompt-engineering.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Chris Lawrence"
+      },
+      "homepage": "https://github.com/Lawrence908/chiron",
+      "repository": "https://github.com/Lawrence908/chiron",
+      "license": "MIT",
+      "keywords": [
+        "ai",
+        "llm",
+        "prompting",
+        "mcp",
+        "agents"
+      ],
+      "category": "ai"
+    },
+    {
+      "name": "dev",
+      "source": "./plugins/dev",
+      "displayName": "Development",
+      "description": "Development: 9 agent skills. api-debugging, docker-compose-editing, dragon-hunt, fastapi-development, frontend-nextjs, full-systems-audit, python-refactor, ui-design, visual-qa-dogfood.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Chris Lawrence"
+      },
+      "homepage": "https://github.com/Lawrence908/chiron",
+      "repository": "https://github.com/Lawrence908/chiron",
+      "license": "MIT",
+      "keywords": [
+        "python",
+        "fastapi",
+        "refactoring",
+        "debugging"
+      ],
+      "category": "dev"
+    },
+    {
+      "name": "writing",
+      "source": "./plugins/writing",
+      "displayName": "Writing",
+      "description": "Writing: 5 agent skills. academic-essay, seo-titles, spec-from-conversation, technical-documentation, word-docs.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Chris Lawrence"
+      },
+      "homepage": "https://github.com/Lawrence908/chiron",
+      "repository": "https://github.com/Lawrence908/chiron",
+      "license": "MIT",
+      "keywords": [
+        "writing",
+        "documentation",
+        "seo",
+        "essays"
+      ],
+      "category": "writing"
+    },
+    {
+      "name": "meta",
+      "source": "./plugins/meta",
+      "displayName": "Meta",
+      "description": "Meta: 3 agent skills. advisory-board, deep-research, prompt-design.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Chris Lawrence"
+      },
+      "homepage": "https://github.com/Lawrence908/chiron",
+      "repository": "https://github.com/Lawrence908/chiron",
+      "license": "MIT",
+      "keywords": [
+        "research",
+        "prompt-design",
+        "advisory"
+      ],
+      "category": "meta"
+    }
+  ]
+}

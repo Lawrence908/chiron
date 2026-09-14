@@ -1,0 +1,20 @@
+{
+  "name": "writing",
+  "description": "Writing: 5 agent skills. academic-essay, seo-titles, spec-from-conversation, technical-documentation, word-docs.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Chris Lawrence"
+  },
+  "homepage": "https://github.com/Lawrence908/chiron",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lawrence908/chiron"
+  },
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "documentation",
+    "seo",
+    "essays"
+  ]
+}

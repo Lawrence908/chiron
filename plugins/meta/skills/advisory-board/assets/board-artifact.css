@@ -1,0 +1,219 @@
+/* Advisory Board record - shared design system.
+   Inlined by scripts/embed-fonts.py alongside the @font-face blocks.
+
+   The page is a board record, not a dashboard: a division list and a sealed
+   judgment. Claret is the seal and is spent ONLY on the verdict and the
+   dissent. Everything else stays quiet so those two read at a glance. */
+
+:root {
+  /* Cool grey-green paper and blue-black ink. Neutrals carry a slight green
+     bias so they read as chosen rather than defaulted. */
+  --paper:      #F1F2F0;
+  --paper-sunk: #E7E9E6;
+  --ink:        #14181C;
+  --ink-2:      #3C464E;
+  --muted:      #6A757C;
+  --rule:       #CBD0CB;
+  --rule-firm:  #A7AFA8;
+
+  /* The seal. Verdict and dissent only. */
+  --seal:       #7A2230;
+  --seal-soft:  #F0E2E3;
+
+  /* Semantic, deliberately separate from the seal. */
+  --agree:      #2C5A4C;
+  --clash:      #8A5A1E;
+
+  /* Sequential ramp, one hue, light to dark. Score magnitude only. */
+  --s0: #EDF0F2; --s1: #D6E0E7; --s2: #B3C6D4; --s3: #8AA8BE;
+  --s4: #5F87A4; --s5: #3D6786; --s6: #274B66; --s7: #1B3648;
+  --on-deep: #F1F2F0;
+
+  --measure: 66ch;
+  --gap: 1.6rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #101418; --paper-sunk: #171D22;
+    --ink: #E8EAE6; --ink-2: #B6BFC4; --muted: #8B959B;
+    --rule: #2A3238; --rule-firm: #3E4850;
+    --seal: #C9737F; --seal-soft: #2A171B;
+    --agree: #6FB09B; --clash: #C79A55;
+    --s0: #1A2229; --s1: #21303B; --s2: #2B4356; --s3: #375872;
+    --s4: #46708E; --s5: #5B89A6; --s6: #7BA5BE; --s7: #A3C4D6;
+    --on-deep: #0E1216;
+  }
+}
+/* The viewer's toggle must win over the OS preference in BOTH directions. */
+:root[data-theme="dark"] {
+  --paper: #101418; --paper-sunk: #171D22;
+  --ink: #E8EAE6; --ink-2: #B6BFC4; --muted: #8B959B;
+  --rule: #2A3238; --rule-firm: #3E4850;
+  --seal: #C9737F; --seal-soft: #2A171B;
+  --agree: #6FB09B; --clash: #C79A55;
+  --s0: #1A2229; --s1: #21303B; --s2: #2B4356; --s3: #375872;
+  --s4: #46708E; --s5: #5B89A6; --s6: #7BA5BE; --s7: #A3C4D6;
+  --on-deep: #0E1216;
+}
+:root[data-theme="light"] {
+  --paper: #F1F2F0; --paper-sunk: #E7E9E6;
+  --ink: #14181C; --ink-2: #3C464E; --muted: #6A757C;
+  --rule: #CBD0CB; --rule-firm: #A7AFA8;
+  --seal: #7A2230; --seal-soft: #F0E2E3;
+  --agree: #2C5A4C; --clash: #8A5A1E;
+  --s0: #EDF0F2; --s1: #D6E0E7; --s2: #B3C6D4; --s3: #8AA8BE;
+  --s4: #5F87A4; --s5: #3D6786; --s6: #274B66; --s7: #1B3648;
+  --on-deep: #F1F2F0;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Board Serif', 'Palatino Linotype', Palatino, Georgia, serif;
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sheet {
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 4rem) clamp(1.1rem, 4vw, 3.5rem) 5rem;
+}
+
+/* ---------- type ---------- */
+
+.label {
+  font-family: 'Board Label', 'Liberation Sans Narrow', 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .72rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+h1, h2, h3 { text-wrap: balance; font-weight: 700; line-height: 1.18; }
+h1 { font-size: clamp(2rem, 4.4vw, 3.1rem); letter-spacing: -.012em; margin: .3em 0 .2em; }
+h2 { font-size: clamp(1.35rem, 2.4vw, 1.75rem); margin: 0 0 .15em; }
+h3 { font-size: 1.08rem; margin: 0 0 .3em; }
+
+p { max-width: var(--measure); margin: 0 0 .85em; }
+p:last-child { margin-bottom: 0; }
+.lede { font-size: 1.14rem; color: var(--ink-2); }
+strong { font-weight: 700; }
+em { font-style: italic; }
+
+.num {
+  font-family: 'Board Label', 'Liberation Sans Narrow', 'Arial Narrow', sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+/* ---------- structure ---------- */
+
+section { margin-top: 3.4rem; }
+
+.rule-head {
+  display: flex; align-items: baseline; gap: 1rem;
+  border-top: 2px solid var(--ink);
+  padding-top: .7rem; margin-bottom: 1.4rem;
+}
+.rule-head .label { flex: none; }
+
+.masthead { border-bottom: 2px solid var(--ink); padding-bottom: 1.6rem; }
+.meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 1rem 1.6rem; margin-top: 1.7rem;
+}
+.meta div { display: flex; flex-direction: column; gap: .18rem; }
+.meta .v { font-size: .95rem; color: var(--ink-2); }
+
+/* ---------- the seal: verdict + dissent ---------- */
+
+.seal-block {
+  border-left: 4px solid var(--seal);
+  background: var(--seal-soft);
+  padding: 1.3rem 1.5rem;
+  display: flex; flex-direction: column; gap: .55rem;
+}
+.seal-block .label { color: var(--seal); }
+.seal-block p { max-width: 60ch; }
+.verdict-line { font-size: clamp(1.2rem, 2.2vw, 1.5rem); font-weight: 700; line-height: 1.3; }
+
+/* ---------- charts ---------- */
+
+.scroller { overflow-x: auto; }
+
+.bars { display: flex; flex-direction: column; gap: .5rem; margin-top: .4rem; }
+.bar-row {
+  display: grid;
+  grid-template-columns: minmax(11rem, 20rem) 1fr 3.4rem;
+  align-items: center; gap: .9rem;
+}
+.bar-row .opt { font-size: .93rem; color: var(--ink-2); }
+.bar-row .opt b { color: var(--ink); }
+.track { background: var(--paper-sunk); height: 1.45rem; border-radius: 0 3px 3px 0; }
+.fill {
+  height: 100%; background: var(--s4);
+  border-radius: 0 4px 4px 0; /* rounded data-end, anchored to baseline */
+  min-width: 2px;
+}
+.fill.win { background: var(--seal); }
+.fill.out { background: var(--s2); }
+.bar-row .score { text-align: right; font-size: 1rem; }
+
+table.matrix { border-collapse: collapse; font-size: .9rem; min-width: 44rem; }
+table.matrix th, table.matrix td { padding: .45rem .55rem; text-align: center; }
+table.matrix thead th { border-bottom: 1.5px solid var(--rule-firm); }
+table.matrix th.row-h { text-align: left; font-weight: 400; color: var(--ink-2); white-space: nowrap; }
+table.matrix td.cell {
+  font-family: 'Board Label', sans-serif; font-variant-numeric: tabular-nums;
+  font-weight: 700; color: var(--ink);
+  border: 2px solid var(--paper); /* 2px surface gap between adjacent fills */
+  border-radius: 3px; min-width: 2.6rem;
+}
+table.matrix td.deep { color: var(--on-deep); }
+table.matrix tbody tr + tr th.row-h { border-top: 1px solid var(--rule); }
+.wt { color: var(--muted); font-size: .8rem; }
+col.spotlight { background: color-mix(in srgb, var(--seal) 7%, transparent); }
+
+/* ---------- the division: members ---------- */
+
+.division { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.member {
+  background: var(--paper); padding: 1.05rem 1.15rem;
+  display: flex; flex-direction: column; gap: .45rem;
+}
+.member .who { display: flex; align-items: baseline; justify-content: space-between; gap: .8rem; }
+.member .rank { font-size: .8rem; color: var(--muted); letter-spacing: .06em; }
+.member p { font-size: .92rem; color: var(--ink-2); max-width: 52ch; }
+@media (min-width: 60rem) { .division { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---------- clash: two positions facing each other ---------- */
+
+.clash { border-top: 1px solid var(--rule-firm); padding-top: 1.1rem; margin-top: 1.6rem; }
+.clash > .q { font-weight: 700; max-width: 68ch; margin-bottom: 1rem; }
+.faces { display: grid; gap: 0; }
+.face { padding: 0 1.3rem; border-left: 2px solid var(--clash); }
+.face:first-child { border-left-width: 2px; }
+.face .label { color: var(--clash); }
+.face p { font-size: .93rem; color: var(--ink-2); margin-top: .35rem; }
+@media (min-width: 52rem) { .faces { grid-template-columns: 1fr 1fr; } }
+.settles { margin-top: 1rem; padding-left: 1.3rem; border-left: 2px solid var(--agree); }
+.settles .label { color: var(--agree); }
+.settles p { font-size: .93rem; margin-top: .35rem; }
+
+/* ---------- misc ---------- */
+
+.callout { background: var(--paper-sunk); padding: 1.1rem 1.3rem; border-radius: 2px; }
+ul.tight { margin: 0; padding-left: 1.1rem; max-width: var(--measure); }
+ul.tight li { margin-bottom: .4rem; }
+ul.tight li::marker { color: var(--muted); }
+
+.foot { margin-top: 4rem; border-top: 1px solid var(--rule); padding-top: 1rem; }
+.foot p { font-size: .84rem; color: var(--muted); max-width: var(--measure); }
+
+*:focus-visible { outline: 2px solid var(--seal); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }

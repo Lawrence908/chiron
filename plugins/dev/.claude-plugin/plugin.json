@@ -1,0 +1,20 @@
+{
+  "name": "dev",
+  "description": "Development: 9 agent skills. api-debugging, docker-compose-editing, dragon-hunt, fastapi-development, frontend-nextjs, full-systems-audit, python-refactor, ui-design, visual-qa-dogfood.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Chris Lawrence"
+  },
+  "homepage": "https://github.com/Lawrence908/chiron",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lawrence908/chiron"
+  },
+  "license": "MIT",
+  "keywords": [
+    "python",
+    "fastapi",
+    "refactoring",
+    "debugging"
+  ]
+}

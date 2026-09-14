@@ -1,0 +1,19 @@
+{
+  "name": "meta",
+  "description": "Meta: 3 agent skills. advisory-board, deep-research, prompt-design.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Chris Lawrence"
+  },
+  "homepage": "https://github.com/Lawrence908/chiron",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lawrence908/chiron"
+  },
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "prompt-design",
+    "advisory"
+  ]
+}
