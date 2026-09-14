@@ -2,7 +2,7 @@
 
 Agent skills for AI engineering, development, writing and research. A Claude Code plugin marketplace.
 
-21 skills across 4 plugins. Generated from a private source tree by `scripts/publish-marketplace.py` in `context-pack`. Do not edit here; changes are overwritten on the next publish.
+20 skills across 4 plugins. Generated from a private source tree by `scripts/publish-marketplace.py` in `context-pack`. Do not edit here; changes are overwritten on the next publish.
 
 ## Install
 
@@ -20,7 +20,7 @@ Agent skills for AI engineering, development, writing and research. A Claude Cod
 |--------|--------|-------------|
 | `ai` | 3 | AI and Agents |
 | `dev` | 9 | Development |
-| `writing` | 6 | Writing |
+| `writing` | 5 | Writing |
 | `meta` | 3 | Meta |
 
 ### AI and Agents (`ai`)
@@ -50,7 +50,6 @@ Agent skills for AI engineering, development, writing and research. A Claude Cod
 | Skill | Description |
 |-------|-------------|
 | `academic-essay` | Assist with writing, editing, and refining academic essays in Chris's voice - balancing scholarly rigor with personal authenticity |
-| `canary-skill` | Temporary canary used to verify that deletions propagate to the published marketplace |
 | `seo-titles` | Write HTML title tags and meta descriptions that both rank and get clicked, treating the title as an ad competing against nine other results rather than a keyword slot |
 | `spec-from-conversation` | Extract structured specifications, requirements, or implementation plans from unstructured conversation history or chat transcripts |
 | `technical-documentation` | Create clear, comprehensive technical documentation including guides, READMEs, API documentation, and procedural instructions |

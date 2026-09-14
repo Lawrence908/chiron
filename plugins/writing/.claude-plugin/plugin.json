@@ -1,6 +1,6 @@
 {
   "name": "writing",
-  "description": "Writing: 6 agent skills. academic-essay, canary-skill, seo-titles, spec-from-conversation, technical-documentation, word-docs.",
+  "description": "Writing: 5 agent skills. academic-essay, seo-titles, spec-from-conversation, technical-documentation, word-docs.",
   "version": "1.0.0",
   "author": {
     "name": "Chris Lawrence"
